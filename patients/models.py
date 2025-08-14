@@ -2,9 +2,6 @@ from django.db import models
 from django.core.validators import MinValueValidator
 from django.utils import timezone
 
-# -----------------------
-# Department Model
-# -----------------------
 class Department(models.Model):
     name = models.CharField(max_length=100, unique=True)
     description = models.TextField(blank=True)
@@ -13,9 +10,6 @@ class Department(models.Model):
         return self.name
 
 
-# -----------------------
-# Doctor Model
-# -----------------------
 class Doctor(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
@@ -28,9 +22,6 @@ class Doctor(models.Model):
         return f"Dr. {self.first_name} {self.last_name}"
 
 
-# -----------------------
-# Patient Model
-# -----------------------
 class Patient(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
@@ -43,9 +34,6 @@ class Patient(models.Model):
         return f"{self.first_name} {self.last_name}"
 
 
-# -----------------------
-# Appointment Model
-# -----------------------
 class Appointment(models.Model):
     STATUS_CHOICES = [
         ("Scheduled", "Scheduled"),
@@ -60,12 +48,9 @@ class Appointment(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="Scheduled")
 
     def __str__(self):
-        return f"Appointment with {self.doctor} for {self.patient} on {self.date}"
+        return f"{self.patient} - {self.doctor} on {self.date}"
 
 
-# -----------------------
-# Medical Record Model
-# -----------------------
 class MedicalRecord(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE, related_name="medical_records")
     doctor = models.ForeignKey(Doctor, on_delete=models.SET_NULL, null=True, related_name="medical_records")
@@ -74,12 +59,9 @@ class MedicalRecord(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return f"Medical Record for {self.patient} ({self.created_at.date()})"
+        return f"{self.patient} - {self.created_at.date()}"
 
 
-# -----------------------
-# Billing Model
-# -----------------------
 class Billing(models.Model):
     PAYMENT_STATUS_CHOICES = [
         ("Pending", "Pending"),
@@ -94,5 +76,4 @@ class Billing(models.Model):
     billing_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-
-        return f"Bill for {self.patient} - {self.amount} ({self.payment_status})"
+        return f"{self.patient} - {self.amount} ({self.payment_status})"
