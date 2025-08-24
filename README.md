@@ -81,3 +81,9 @@ We tested endpoints using **Postman** for:
 - POST (create new record)
 - PUT/PATCH (update record)
 - DELETE (remove record)
+
+Example:
+```python
+class PatientViewSet(viewsets.ModelViewSet):
+    queryset = Patient.objects.all()
+    serializer_class = PatientSerializer
