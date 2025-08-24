@@ -82,6 +82,7 @@ We tested endpoints using **Postman** for:
 - PUT/PATCH (update record)
 - DELETE (remove record)
 
+<<<<<<< HEAD
 # Department Endpoints Testing
  GET All Departments
 ![alt text](image.png)
@@ -129,3 +130,10 @@ PUT Update Patient
 ![alt text](image-13.png)
 
  DELETE Patient
+=======
+Example:
+```python
+class PatientViewSet(viewsets.ModelViewSet):
+    queryset = Patient.objects.all()
+    serializer_class = PatientSerializer
+>>>>>>> eea3a3ceda500581e6550003b69a6da64ab3efd0
