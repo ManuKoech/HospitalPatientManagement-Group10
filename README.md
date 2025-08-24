@@ -81,3 +81,51 @@ We tested endpoints using **Postman** for:
 - POST (create new record)
 - PUT/PATCH (update record)
 - DELETE (remove record)
+
+# Department Endpoints Testing
+ GET All Departments
+![alt text](image.png)
+ 
+ POST Create Department
+ ![alt text](image-1.png)
+
+ GET Single Department
+ ![alt text](image-2.png)
+
+ PUT Update Department
+ ![alt text](image-3.png)
+
+  DELETE Department
+  ![alt text](image-4.png)
+
+  # Doctor Endpoints Testing
+  POST Create Doctor
+  ![alt text](image-5.png)
+
+  GET All Doctors
+  ![alt text](image-6.png)
+
+  GET Single Doctor
+  ![alt text](image-7.png)
+
+  PUT Update Doctor
+  ![alt text](image-8.png)
+
+   DELETE Doctor
+  ![alt text](image-9.png)
+
+# Patient Endpoints Testing
+
+POST Create Patient
+![alt text](image-10.png)
+
+GET All Patients
+![alt text](image-11.png)
+
+GET Single Patient
+![alt text](image-12.png)
+
+PUT Update Patient
+![alt text](image-13.png)
+
+ DELETE Patient
