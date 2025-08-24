@@ -5,9 +5,6 @@ from django.urls import reverse
 from django.utils import timezone
 from .models import Department, Doctor, Patient, Appointment, MedicalRecord, Billing
 
-# --------------------------
-# Base Setup for Tests
-# --------------------------
 class APITestSetup(TestCase):
     def setUp(self):
         self.client = APIClient()
@@ -63,9 +60,7 @@ class APITestSetup(TestCase):
             payment_status="Pending"
         )
 
-# --------------------------
-# Department CRUD Tests
-# --------------------------
+
 class DepartmentTests(APITestSetup):
     def test_get_departments(self):
         response = self.client.get(reverse('department-list'))
@@ -76,9 +71,7 @@ class DepartmentTests(APITestSetup):
         response = self.client.post(reverse('department-list'), data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-# --------------------------
-# Doctor CRUD Tests
-# --------------------------
+
 class DoctorTests(APITestSetup):
     def test_get_doctors(self):
         response = self.client.get(reverse('doctor-list'))
@@ -96,9 +89,7 @@ class DoctorTests(APITestSetup):
         response = self.client.post(reverse('doctor-list'), data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-# --------------------------
-# Patient CRUD Tests
-# --------------------------
+
 class PatientTests(APITestSetup):
     def test_get_patients(self):
         response = self.client.get(reverse('patient-list'))
@@ -116,9 +107,7 @@ class PatientTests(APITestSetup):
         response = self.client.post(reverse('patient-list'), data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-# --------------------------
-# Appointment CRUD Tests
-# --------------------------
+
 class AppointmentTests(APITestSetup):
     def test_get_appointments(self):
         response = self.client.get(reverse('appointment-list'))
@@ -135,9 +124,6 @@ class AppointmentTests(APITestSetup):
         response = self.client.post(reverse('appointment-list'), data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-# --------------------------
-# Medical Record CRUD Tests
-# --------------------------
 class MedicalRecordTests(APITestSetup):
     def test_get_medical_records(self):
         response = self.client.get(reverse('medicalrecord-list'))
@@ -153,9 +139,7 @@ class MedicalRecordTests(APITestSetup):
         response = self.client.post(reverse('medicalrecord-list'), data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-# --------------------------
-# Billing CRUD Tests
-# --------------------------
+
 class BillingTests(APITestSetup):
     def test_get_billings(self):
         response = self.client.get(reverse('billing-list'))

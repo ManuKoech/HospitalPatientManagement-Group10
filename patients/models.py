@@ -16,7 +16,7 @@ class Doctor(models.Model):
     specialization = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=20)
     email = models.EmailField(unique=True)
-    department = models.ForeignKey(Department, on_delete=models.CASCADE, related_name="doctors")
+    department = models.ForeignKey(Department,  on_delete=models.SET_NULL, null=True, blank=True, related_name="doctors")
 
     def __str__(self):
         return f"Dr. {self.first_name} {self.last_name}"
