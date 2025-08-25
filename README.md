@@ -111,12 +111,12 @@ class DoctorViewSet(viewsets.ModelViewSet):
 
 ## Available Actions for Each Endpoint
 
-- **LIST** → `GET /api/doctors/` – Retrieve all records  
-- **CREATE** → `POST /api/doctors/` – Create new record  
-- **RETRIEVE** → `GET /api/doctors/{id}/` – Get single record  
-- **UPDATE** → `PUT /api/doctors/{id}/` – Full update  
-- **PARTIAL_UPDATE** → `PATCH /api/doctors/{id}/` – Partial update  
-- **DESTROY** → `DELETE /api/doctors/{id}/` – Delete record  
+LIST** → `GET /api/doctors/` – Retrieve all records  
+CREATE** → `POST /api/doctors/` – Create new record  
+RETRIEVE** → `GET /api/doctors/{id}/` – Get single record  
+UPDATE** → `PUT /api/doctors/{id}/` – Full update  
+PARTIAL_UPDATE** → `PATCH /api/doctors/{id}/` – Partial update  
+DESTROY** → `DELETE /api/doctors/{id}/` – Delete record  
 
 ---
 
@@ -146,130 +146,131 @@ We conducted thorough testing using **Postman** to validate all CRUD operations 
 
 ---
 
-## Department Endpoints Testing  
+# Department Endpoints Testing  
 
-- **GET All Departments**  
-  ![Get All Departments](image.png)  
+## GET All Departments
+![GET All Departments](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image.png) 
 
-- **POST Create Department**  
-  ![Create Department](image-1.png)  
+## POST Create Department 
+![POST Create Department](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-1.png)  
 
-- **GET Single Department**  
-  ![Get Department](image-2.png)  
+## GET Single Department
+![GET Single Department](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-2.png)  
 
-- **PUT Update Department**  
-  ![Update Department](image-3.png)  
+## PUT Update Department  
+![PUT Update Department](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-3.png)  
 
-- **DELETE Department**  
-  ![Delete Department](image-4.png)  
+## DELETE Department  
+![DELETE Department](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-4.png)  
 
----
-
-## Doctor Endpoints Testing  
-
-- **POST Create Doctor**  
-  ![Create Doctor](image-5.png)  
-
-- **GET All Doctors**  
-  ![Get All Doctors](image-6.png)  
-
-- **GET Single Doctor**  
-  ![Get Doctor](image-7.png)  
-
-- **PUT Update Doctor**  
-  ![Update Doctor](image-8.png)  
-
-- **DELETE Doctor**  
-  ![Delete Doctor](image-9.png)  
 
 ---
 
-## Patient Endpoints Testing  
+# Doctor Endpoints Testing  
 
-- **POST Create Patient**  
-  ![Create Patient](image-10.png)  
+## POST Create Doctor
+![Create Doctor](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-5.png)  
 
-- **GET All Patients**  
-  ![Get All Patients](image-11.png)  
+## GET All Doctors
+![Get All Doctors](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-6.png)  
 
-- **GET Single Patient**  
-  ![Get Patient](image-12.png)  
+## GET Single Doctor
+![Get Doctor](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-7.png)  
 
-- **PUT Update Patient**  
-  ![Update Patient](image-13.png)  
+## PUT Update Doctor
+![Update Doctor](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-8.png)  
 
-- **DELETE Patient**  
-  ![Delete Patient](image-14.png)  
-
----
-
-## Appointment Endpoints Testing  
-
-- **POST Create Appointment**  
-  ![Create Appointment](image-15.png)  
-
-- **GET All Appointments**  
-  ![Get All Appointments](image-16.png)  
-
-- **GET Single Appointment**  
-  ![Get Appointment](image-17.png)  
-
-- **PUT Update Appointment**  
-  ![Update Appointment](image-18.png)  
-
-- **DELETE Appointment**  
-  ![Delete Appointment](image-19.png)  
+## DELETE Doctor
+![Delete Doctor](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-9.png)  
 
 ---
 
-## Medical Record Endpoints Testing  
+# Patient Endpoints Testing  
 
-- **POST Create Medical Record**  
-  ![Create Medical Record](image-20.png)  
+## POST Create Patient
+![Create Patient](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-10.png)  
 
-- **GET All Medical Records**  
-  ![Get All Medical Records](image-21.png)  
+## GET All Patients
+![Get All Patients](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-11.png)  
 
-- **GET Single Medical Record**  
-  ![Get Medical Record](image-22.png)  
+## GET Single Patient
+![Get Patient](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-12.png)  
 
-- **PUT Update Medical Record**  
-  ![Update Medical Record](image-23.png)  
+## PUT Update Patient
+![Update Patient](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-13.png)  
 
-- **DELETE Medical Record**  
-  ![Delete Medical Record](image-24.png)  
-
----
-
-## Billing Endpoints Testing  
-
-- **POST Create Billing**  
-  ![Create Billing](image-26.png)  
-
-- **GET All Billings**  
-  ![Get All Billings](image-25.png)  
-
-- **GET Single Billing**  
-  ![Get Billing](image-27.png)  
-
-- **PUT Update Billing**  
-  ![Update Billing](image-28.png)  
-
-- **DELETE Billing**  
-  ![Delete Billing](image-29.png)  
+## DELETE Patient
+![Delete Patient](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-14.png)  
 
 ---
 
-## Validation Testing  
+# Appointment Endpoints Testing  
 
-- **Test Invalid Email**  
-  ![Invalid Email](image-30.png)  
+## POST Create Appointment
+![Create Appointment](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-15.png)  
 
-- **Test Duplicate Email**  
-  ![Duplicate Email](image-31.png)  
+## GET All Appointments
+![Get All Appointments](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-16.png)  
 
-- **Test Past Appointment Date**  
-  ![Past Appointment](image-32.png)  
+## GET Single Appointment
+![Get Appointment](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-17.png)  
+
+## PUT Update Appointment
+![Update Appointment](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-18.png)  
+
+## DELETE Appointment
+![Delete Appointment](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-19.png)  
+
+---
+
+# Medical Record Endpoints Testing  
+
+## POST Create Medical Record
+![Create Medical Record](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-20.png)  
+
+## GET All Medical Records
+![Get All Medical Records](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-21.png)  
+
+## GET Single Medical Record
+![Get Medical Record](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-22.png)  
+
+## PUT Update Medical Record
+![Update Medical Record](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-23.png)  
+
+## DELETE Medical Record
+![Delete Medical Record](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-24.png)  
+
+---
+
+# Billing Endpoints Testing  
+
+## POST Create Billing
+![Create Billing](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-26.png)  
+
+## GET All Billings
+![Get All Billings](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-25.png)  
+
+## GET Single Billing
+![Get Billing](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-27.png)  
+
+## PUT Update Billing
+![Update Billing](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-28.png)  
+
+## DELETE Billing  
+![DELETE Billing](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-29.png) 
+
+---
+
+# Validation Testing  
+
+## Test Invalid Email
+![Invalid Email](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-30.png)  
+
+## Test Duplicate Email
+![Duplicate Email](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-31.png)  
+
+## Test Past Appointment Date
+![Past Appointment](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-32.png)  
 
 ---
 
