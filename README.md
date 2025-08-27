@@ -32,18 +32,13 @@ A **Django REST Framework (DRF)** API for managing hospital operations, includin
 
 ## Project Overview  
 
-The Hospital Patient Management API  allows CRUD operations for managing hospital-related data, including:
+The Hospital Patient Management API allows CRUD operations for managing hospital-related data, including:
 
 - Doctors – Manage medical staff details and specializations
-
 - Patients – Maintain comprehensive patient information
-
 - Appointments – Schedule and track patient-doctor consultations
-
 - Medical Records – Store patient diagnosis and treatment history
-
 - Billing – Manage financial transactions and payment status
-
 
 ---
 
@@ -51,17 +46,14 @@ The Hospital Patient Management API  allows CRUD operations for managing hospita
 
 ### 1. Department  
 - Fields: `id`, `name (unique)`, `description`  
-
 - Relationships: One-to-Many with Doctors  
 
 ### 2. Doctor  
 - Fields: `id`, `first_name`, `last_name`, `specialization`, `phone_number`, `email (unique)`, `department (FK)`  
-
 - Relationships: Many-to-One with Department, One-to-Many with Appointments  
 
 ### 3. Patient  
 - Fields: `id`, `first_name`, `last_name`, `date_of_birth`, `phone_number`, `email (unique)`, `address`  
-
 - Relationships: One-to-Many with Appointments and Medical Records  
 
 ### 4. Appointment  
@@ -70,32 +62,27 @@ The Hospital Patient Management API  allows CRUD operations for managing hospita
 
 ### 5. Medical Record  
 - Fields: `id`, `patient (FK)`, `doctor (FK)`, `diagnosis`, `treatment`, `created_at`  
-
 - Relationships: Many-to-One with Patient and Doctor  
 
 ### 6. Billing  
 - Fields: `id`, `patient (FK)`, `appointment (OneToOne)`, `amount`, `payment_status (Pending/Paid/Cancelled)`, `billing_date`  
-
 - Relationships: Many-to-One with Patient, One-to-One with Appointment  
 
 ---
 
-
-# Serializers
+## Serializers  
 
 Each model has its own serializer for:
 - Converting model instances to JSON.
 - Validating incoming data before saving.
 
-# Example Validation Rules:
+### Example Validation Rules:
+- Email addresses must be unique across doctors and patients
+- Phone numbers must follow international format standards
+- Appointment dates cannot be in the past
+- Bill amounts cannot be negative
 
-Email addresses must be unique across doctors and patients
-
-Phone numbers must follow international format standards
-
-Appointment dates cannot be in the past
-
-Bill amounts cannot be negative
+---
 
 ## Views and Viewsets  
 
@@ -107,6 +94,8 @@ Example:
 class DoctorViewSet(viewsets.ModelViewSet):
     queryset = Doctor.objects.all()
     serializer_class = DoctorSerializer
+```
+
 
 
 ## Available Actions for Each Endpoint
@@ -149,130 +138,128 @@ We conducted thorough testing using **Postman** to validate all CRUD operations 
 # Department Endpoints Testing  
 
 ## GET All Departments
-![GET All Departments](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image.png) 
+![GET All Departments](image.png)  
 
 ## POST Create Department 
-![POST Create Department](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-1.png)  
+![POST Create Department](image-1.png)  
 
 ## GET Single Department
-![GET Single Department](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-2.png)  
+![GET Single Department](image-2.png)  
 
 ## PUT Update Department  
-![PUT Update Department](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-3.png)  
+![PUT Update Department](image-3.png)  
 
 ## DELETE Department  
-![DELETE Department](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-4.png)  
-
+![DELETE Department](image-4.png)  
 
 ---
 
 # Doctor Endpoints Testing  
 
 ## POST Create Doctor
-![Create Doctor](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-5.png)  
+![Create Doctor](image-5.png)  
 
 ## GET All Doctors
-![Get All Doctors](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-6.png)  
+![Get All Doctors](image-6.png)  
 
 ## GET Single Doctor
-![Get Doctor](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-7.png)  
+![Get Doctor](image-7.png)  
 
 ## PUT Update Doctor
-![Update Doctor](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-8.png)  
+![Update Doctor](image-8.png)  
 
 ## DELETE Doctor
-![Delete Doctor](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-9.png)  
+![Delete Doctor](image-9.png)  
 
 ---
 
 # Patient Endpoints Testing  
 
 ## POST Create Patient
-![Create Patient](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-10.png)  
+![Create Patient](image-10.png)  
 
 ## GET All Patients
-![Get All Patients](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-11.png)  
+![Get All Patients](image-11.png)  
 
 ## GET Single Patient
-![Get Patient](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-12.png)  
+![Get Patient](image-12.png)  
 
 ## PUT Update Patient
-![Update Patient](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-13.png)  
+![Update Patient](image-13.png)  
 
 ## DELETE Patient
-![Delete Patient](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-14.png)  
+![Delete Patient](image-14.png)  
 
 ---
 
 # Appointment Endpoints Testing  
 
 ## POST Create Appointment
-![Create Appointment](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-15.png)  
+![Create Appointment](image-15.png)  
 
 ## GET All Appointments
-![Get All Appointments](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-16.png)  
+![Get All Appointments](image-16.png)  
 
 ## GET Single Appointment
-![Get Appointment](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-17.png)  
+![Get Appointment](image-17.png)  
 
 ## PUT Update Appointment
-![Update Appointment](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-18.png)  
+![Update Appointment](image-18.png)  
 
 ## DELETE Appointment
-![Delete Appointment](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-19.png)  
+![Delete Appointment](image-19.png)  
 
 ---
 
 # Medical Record Endpoints Testing  
 
 ## POST Create Medical Record
-![Create Medical Record](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-20.png)  
+![Create Medical Record](image-20.png)  
 
 ## GET All Medical Records
-![Get All Medical Records](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-21.png)  
+![Get All Medical Records](image-21.png)  
 
 ## GET Single Medical Record
-![Get Medical Record](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-22.png)  
+![Get Medical Record](image-22.png)  
 
 ## PUT Update Medical Record
-![Update Medical Record](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-23.png)  
+![Update Medical Record](image-23.png)  
 
 ## DELETE Medical Record
-![Delete Medical Record](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-24.png)  
+![Delete Medical Record](image-24.png)  
 
 ---
 
 # Billing Endpoints Testing  
 
 ## POST Create Billing
-![Create Billing](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-26.png)  
+![Create Billing](image-26.png)  
 
 ## GET All Billings
-![Get All Billings](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-25.png)  
+![Get All Billings](image-25.png)  
 
 ## GET Single Billing
-![Get Billing](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-27.png)  
+![Get Billing](image-27.png)  
 
 ## PUT Update Billing
-![Update Billing](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-28.png)  
+![Update Billing](image-28.png)  
 
 ## DELETE Billing  
-![DELETE Billing](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-29.png) 
+![DELETE Billing](image-29.png)  
 
 ---
 
 # Validation Testing  
 
 ## Test Invalid Email
-![Invalid Email](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-30.png)  
+![Invalid Email](image-30.png)  
 
 ## Test Duplicate Email
-![Duplicate Email](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-31.png)  
+![Duplicate Email](image-31.png)  
 
 ## Test Past Appointment Date
-![Past Appointment](https://raw.githubusercontent.com/egkimari/HospitalPatientManagement-Group10/main/image-32.png)  
+![Past Appointment](image-32.png)  
 
----
 
 ## Installation and Setup  
 
@@ -281,22 +268,24 @@ Clone the repository:
 ```bash
 git clone https://github.com/egkimari/HospitalPatientManagement-Group10.git
 cd HospitalPatientManagement-Group10
+```
 
 ## Installation
 
 ### Install dependencies
 ```bash
 pip install -r requirements.txt
+```
 
 ## Run Migrations
 ```bash
 python manage.py migrate
-
+```
 ## Start Development Server
 ```bash
 python manage.py runserver
 
-
+```
 # Access the API
 http://localhost:8000/api/
 
@@ -326,7 +315,7 @@ Version Control: Git & GitHub
 
 Validation: Django validators and custom serializers
 
-📜 License
+# license
 
 This project is developed for educational purposes as part of:
 
