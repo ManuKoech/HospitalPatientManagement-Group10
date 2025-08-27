@@ -315,7 +315,7 @@ Version Control: Git & GitHub
 
 Validation: Django validators and custom serializers
 
-# license
+# License
 
 This project is developed for educational purposes as part of:
 
