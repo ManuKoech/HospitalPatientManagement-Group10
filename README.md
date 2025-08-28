@@ -10,7 +10,7 @@ A **Django REST Framework (DRF)** API for managing hospital operations, includin
 |------------ |-------|
 | 150210      | Erick Githinji |
 | 151179      | Abdallah Aymaan Fihri |
-| 148831      | Emmanuel Koech |
+| 148831      | Emmanuel Koech  |
 | 151839      | Serah Wairimu |
 | 151956      | Clinton Gikonyo |
 | 151104      | Claire Wambui |
