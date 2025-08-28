@@ -34,11 +34,11 @@ A **Django REST Framework (DRF)** API for managing hospital operations, includin
 
 The Hospital Patient Management API allows CRUD operations for managing hospital-related data, including:
 
-- Doctors – Manage medical staff details and specializations
-- Patients – Maintain comprehensive patient information
-- Appointments – Schedule and track patient-doctor consultations
-- Medical Records – Store patient diagnosis and treatment history
-- Billing – Manage financial transactions and payment status
+- Doctors – Manage medical staff details and specializations.
+- Patients – Maintain comprehensive patient information.
+- Appointments – Schedule and track patient-doctor consultations.
+- Medical Records – Store patient diagnosis and treatment history.
+- Billing – Manage financial transactions and payment status.
 
 ---
 
@@ -46,27 +46,27 @@ The Hospital Patient Management API allows CRUD operations for managing hospital
 
 ### 1. Department  
 - Fields: `id`, `name (unique)`, `description`  
-- Relationships: One-to-Many with Doctors  
+- Relationships: One-to-Many with Doctors.  
 
 ### 2. Doctor  
 - Fields: `id`, `first_name`, `last_name`, `specialization`, `phone_number`, `email (unique)`, `department (FK)`  
-- Relationships: Many-to-One with Department, One-to-Many with Appointments  
+- Relationships: Many-to-One with Department, One-to-Many with Appointments.
 
 ### 3. Patient  
 - Fields: `id`, `first_name`, `last_name`, `date_of_birth`, `phone_number`, `email (unique)`, `address`  
-- Relationships: One-to-Many with Appointments and Medical Records  
+- Relationships: One-to-Many with Appointments and Medical Records.  
 
 ### 4. Appointment  
 - Fields: `id`, `patient (FK)`, `doctor (FK)`, `date`, `reason`, `status (Scheduled/Completed/Cancelled)`  
-- Relationships: Many-to-One with Patient and Doctor  
+- Relationships: Many-to-One with Patient and Doctor.  
 
 ### 5. Medical Record  
 - Fields: `id`, `patient (FK)`, `doctor (FK)`, `diagnosis`, `treatment`, `created_at`  
-- Relationships: Many-to-One with Patient and Doctor  
+- Relationships: Many-to-One with Patient and Doctor.  
 
 ### 6. Billing  
 - Fields: `id`, `patient (FK)`, `appointment (OneToOne)`, `amount`, `payment_status (Pending/Paid/Cancelled)`, `billing_date`  
-- Relationships: Many-to-One with Patient, One-to-One with Appointment  
+- Relationships: Many-to-One with Patient, One-to-One with Appointment. 
 
 ---
 
