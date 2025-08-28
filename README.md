@@ -34,11 +34,11 @@ A **Django REST Framework (DRF)** API for managing hospital operations, includin
 
 The Hospital Patient Management API allows CRUD operations for managing hospital-related data, including:
 
-- Doctors – Manage medical staff details and specializations
-- Patients – Maintain comprehensive patient information
-- Appointments – Schedule and track patient-doctor consultations
-- Medical Records – Store patient diagnosis and treatment history
-- Billing – Manage financial transactions and payment status
+- Doctors – Manage medical staff details and specializations.
+- Patients – Maintain comprehensive patient information.
+- Appointments – Schedule and track patient-doctor consultations.
+- Medical Records – Store patient diagnosis and treatment history.
+- Billing – Manage financial transactions and payment status.
 
 ---
 
@@ -77,10 +77,10 @@ Each model has its own serializer for:
 - Validating incoming data before saving.
 
 ### Example Validation Rules:
-- Email addresses must be unique across doctors and patients
-- Phone numbers must follow international format standards
-- Appointment dates cannot be in the past
-- Bill amounts cannot be negative
+- Email addresses must be unique across doctors and patients.
+- Phone numbers must follow international format standards.
+- Appointment dates cannot be in the past.
+- Bill amounts cannot be negative.
 
 ---
 
